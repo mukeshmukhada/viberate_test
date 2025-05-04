@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibrate Phone</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+    button {
+      font-size: 1.5em;
+      padding: 15px 30px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Vibrate My Phone</h1>
+  <button onclick="vibratePhone()">Vibrate</button>
+
+  <script>
+    function vibratePhone() {
+      if ("vibrate" in navigator) {
+        navigator.vibrate([300, 100, 300]);
+      } else {
+        alert("Vibration not supported on this device.");
+      }
+    }
+  </script>
+</body>
+</html>
